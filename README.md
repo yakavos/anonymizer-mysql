@@ -1,6 +1,6 @@
 # anonymizer-mysql
 
-This simple tool will allow you to make anonymizerd clone of your database.
+This simple tool will allow you to make an anonymized clone of your database.
 
 ## Installation
 
@@ -115,11 +115,11 @@ You need to create a config(.json) file like this:
 }
 ```
 
-You need to configure the database connections. "source_db" referred to the original database to anonymize. "target_db" referred to the anonymized clone of the "source_db". Be care, in this process, the "target_db" database is going to be destroyed.
+You need to configure the database connections. "source_db" referred to the original database to anonymize. "target_db" refers to the anonymized clone of the "source_db". Be careful, in this process, the "target_db" database is going to be destroyed where the -f (--force) flag is used.
 
 You need to configure rules to apply to a field of one table.
 
-The "apply" JSON attribute indicates the MySQL function to execute, here your anonymizer function for this field. For example, use "substring(md5(name),1,8)" for anonymize the field called name.
+The "apply" JSON attribute indicates the MySQL function to execute, here your anonymizer function for this field. For example, use "substring(md5(name),1,8)" for anonymizing the field called name.
 
 For conditional queries use the JSON attribute "where".
 
@@ -127,7 +127,7 @@ You can create many conditional queries for the same table. See the example.
 
 You can use "insertIgnore" as attribute and set it true if you want do a "INSERT IGNORE' instead of "UPDATE" query,
 
-Once you has been created a config(.json) file, you can use this tool with:
+Once you have created a config(.json) file, you can use this tool with:
 Usage: anonymizer-mysql [options]
 
 Options:
@@ -139,3 +139,7 @@ Options:
     -8, --dumpv8        If you use MySQL v8.x dump. (--column-statistics=0)
     -m, --mysql <file>  Path to mysql. Default: system mysql.
     -h, --help          output usage information
+
+Troubleshooting:
+  On Windows OS, the anonimizer tool sometimes may need invoked with .cmd
+  Example - anonymizer-mysql.cmd [options]
