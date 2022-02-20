@@ -141,5 +141,5 @@ Options:
     -h, --help          output usage information
 
 Troubleshooting:
-  On Windows OS, the anonimizer tool sometimes may need invoked with .cmd
+  On Windows OS, the anonymizer tool sometimes may need invoked with .cmd
   Example - anonymizer-mysql.cmd [options]
